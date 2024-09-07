@@ -49,6 +49,7 @@ function XCOM(body)
         XCOM_URL,
         [],
         join(["$k=$v" for (k, v) in body], '&'),
+        require_ssl_verification = false
     )
     if r.status != 200
         desc = STATUS_CODES[r.status]
