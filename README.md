@@ -3,7 +3,7 @@ NIST XCOM x-ray attenuations in Julia.
 
 # Basic Usage
 ```julia
-julia> using Pkg; Pkg.add("https://github.com/kczimm/Attenuations.jl")
+julia> using Pkg; Pkg.add("Attenuations.jl")
 
 julia> using Attenuations
 
