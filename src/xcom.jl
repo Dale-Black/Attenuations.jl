@@ -5,14 +5,12 @@ function parseresponse(r::HTTP.Messages.Response)
     lines = split(body, "\n")
     numbers = Float64[]
     
-    data_found = false
     for line in lines
         # Skip empty lines
         isempty(strip(line)) && continue
         
-        # Looking for the data line that starts with the energy value
-        if !data_found && occursin(r"^\s+\d+\.\d+E[+-]\d+", line)
-            data_found = true
+        # Looking for data lines that start with energy values
+        if occursin(r"^\s+\d+\.\d+E[+-]\d+", line)
             values = filter(!isempty, split(line))
             if length(values) >= 7  # Ensure we have enough values
                 try
@@ -21,7 +19,7 @@ function parseresponse(r::HTTP.Messages.Response)
                     push!(numbers, total_value)
                 catch e
                     @error "Failed to parse value from line: $line" exception=e
-                    rethrow(e)
+                    continue
                 end
             end
         end
@@ -95,10 +93,31 @@ function XCOM(body::Dict{String,String})
     
     # Add energies to all types of requests
     if haskey(body, "Energies")
-        request_body["Energies"] = body["Energies"]
+        # Check if we have multiple energies
+        energies = split(body["Energies"], ';')
+        
+        # For multiple energies, make individual requests and combine results
+        if length(energies) > 1
+            results = Float64[]
+            for energy in energies
+                request_body_single = copy(request_body)
+                request_body_single["Energies"] = energy
+                
+                r = HTTP.post(url, headers, join(["$k=$v" for (k, v) in request_body_single], '&'))
+                
+                if r.status != 200
+                    error("XCOM error: HTTP $(r.status)")
+                end
+                
+                append!(results, parseresponse(r))
+            end
+            return results
+        else
+            request_body["Energies"] = body["Energies"]
+        end
     end
     
-    # Make the request
+    # Make the request (for single energy or if no energies specified)
     try
         form_data = join(["$k=$v" for (k, v) in request_body], '&')
         @debug "Sending request to XCOM" URL=url body=request_body
