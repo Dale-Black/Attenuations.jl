@@ -41,9 +41,9 @@ bodykey(::Type{InElectronField}) = "TRIP"
 bodykey(::Type{WithCoherent}) = "TOTAL"
 bodykey(::Type{WithoutCoherent}) = "TOTAL_NO_COH"
 
-# Format energies for XCOM API
+# Format energies for XCOM API - now using newlines
 formatenergies(energies::AbstractArray{<:Unitful.Energy}) = 
-    join([string(Float64(uconvert(MeV, e).val)) for e in energies], ';')
+    join([string(Float64(uconvert(MeV, e).val)) for e in energies], "%0D%0A")
 
 # XCOM API endpoints
 const XCOM_ELEMENT_URL = "https://physics.nist.gov/cgi-bin/Xcom/xcom3_1-t"
@@ -93,31 +93,10 @@ function XCOM(body::Dict{String,String})
     
     # Add energies to all types of requests
     if haskey(body, "Energies")
-        # Check if we have multiple energies
-        energies = split(body["Energies"], ';')
-        
-        # For multiple energies, make individual requests and combine results
-        if length(energies) > 1
-            results = Float64[]
-            for energy in energies
-                request_body_single = copy(request_body)
-                request_body_single["Energies"] = energy
-                
-                r = HTTP.post(url, headers, join(["$k=$v" for (k, v) in request_body_single], '&'))
-                
-                if r.status != 200
-                    error("XCOM error: HTTP $(r.status)")
-                end
-                
-                append!(results, parseresponse(r))
-            end
-            return results
-        else
-            request_body["Energies"] = body["Energies"]
-        end
+        request_body["Energies"] = body["Energies"]
     end
     
-    # Make the request (for single energy or if no energies specified)
+    # Make the request
     try
         form_data = join(["$k=$v" for (k, v) in request_body], '&')
         @debug "Sending request to XCOM" URL=url body=request_body
