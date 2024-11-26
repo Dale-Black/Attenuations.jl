@@ -50,6 +50,7 @@ formatenergies(energies::AbstractArray{<:Unitful.Energy}) =
 # XCOM API endpoints
 const XCOM_ELEMENT_URL = "https://physics.nist.gov/cgi-bin/Xcom/xcom3_1-t"
 const XCOM_COMPOUND_URL = "https://physics.nist.gov/cgi-bin/Xcom/xcom3_2-t"
+const XCOM_MIXTURE_URL = "https://physics.nist.gov/cgi-bin/Xcom/xcom3_3-t"
 
 function XCOM(body::Dict{String,String})
     # Required headers
@@ -59,31 +60,40 @@ function XCOM(body::Dict{String,String})
         "Referer" => "https://physics.nist.gov/cgi-bin/Xcom/xcom2-t"
     ]
     
-    # Determine if we're dealing with elements or compounds
-    is_element = haskey(body, "Method") && body["Method"] == "1"
-    
-    # Choose URL based on type
-    url = is_element ? XCOM_ELEMENT_URL : XCOM_COMPOUND_URL
+    # Determine request type and URL
+    url = if haskey(body, "Method")
+        if body["Method"] == "1"
+            XCOM_ELEMENT_URL
+        elseif body["Method"] == "2"
+            XCOM_COMPOUND_URL
+        else  # Method == "3"
+            XCOM_MIXTURE_URL
+        end
+    else
+        XCOM_COMPOUND_URL  # default
+    end
     
     # Prepare request body based on type
     request_body = Dict{String,String}()
     
-    if is_element
+    if url == XCOM_ELEMENT_URL
         # Element request
         request_body["ZNum"] = body["ZNum"]
         request_body["ZSym"] = ""  # Required but can be empty
         request_body["OutOpt"] = "PIC"
-    else
+    elseif url == XCOM_COMPOUND_URL
         # Compound request
-        if haskey(body, "Formula")
-            request_body["Formula"] = body["Formula"]
-        elseif haskey(body, "Formulae")
-            request_body["Formula"] = body["Formulae"]
-        end
+        request_body["Formula"] = body["Formula"]
         request_body["Name"] = ""  # Required for compounds
+    else  # XCOM_MIXTURE_URL
+        # Mixture request
+        # Convert newlines to actual newlines in the form data
+        formulae = replace(body["Formulae"], '\n' => "%0D%0A")
+        request_body["Formulae"] = formulae
+        request_body["Name"] = ""
     end
     
-    # Add energies to both types of requests
+    # Add energies to all types of requests
     if haskey(body, "Energies")
         request_body["Energies"] = body["Energies"]
     end
