@@ -526,6 +526,649 @@ Materials = (
         Dict(1 => 0.111898, 8 => 0.888102),
     ),
 
+    ## NCAT MATERIALS FROM CATSIM
+    # NCAT materials from gecatsim
+    ncat_adipose=Material(
+        "NCAT Adipose",
+        0.55,  # Approximate Z/A ratio
+        75.0eV,  # Approximate I value
+        0.92g / cm^3,
+        Dict(
+            1 => 0.120120,
+            6 => 0.640641,
+            7 => 0.008008,
+            8 => 0.229229,
+            15 => 0.002002,
+        ),
+    ),
+    ncat_air=Material(
+        "NCAT Air",
+        0.50,  # Approximate Z/A ratio
+        85.7eV,  # Approximate I value
+        0.001205g / cm^3,
+        Dict(
+            6 => 0.000124,
+            7 => 0.755268,
+            8 => 0.231781,
+            17 => 0.012827,
+        ),
+    ),
+    ncat_aluminum=Material(
+        "NCAT Aluminum",
+        0.48,  # Approximate Z/A ratio for Al
+        166.0eV,  # Approximate I value for Al
+        2.694100g / cm^3,
+        Dict(
+            13 => 1.000000,
+        ),
+    ),
+    ncat_bladder=Material(
+        "NCAT Bladder",
+        0.55,  # Approximate Z/A ratio
+        75.0eV,  # Approximate I value
+        1.04g / cm^3,
+        Dict(
+            1 => 0.105000,
+            6 => 0.096000,
+            7 => 0.026000,
+            8 => 0.761000,
+            11 => 0.002000,
+            15 => 0.002000,
+            16 => 0.002000,
+            17 => 0.003000,
+            19 => 0.003000,
+        ),
+    ),
+    ncat_blood=Material(
+        "NCAT Blood",
+        0.55,  # Approximate Z/A ratio
+        75.2eV,  # Approximate I value
+        1.06g / cm^3,
+        Dict(
+            1 => 0.102000,
+            6 => 0.110000,
+            7 => 0.033000,
+            8 => 0.745000,
+            11 => 0.001000,
+            15 => 0.001000,
+            16 => 0.002000,
+            17 => 0.003000,
+            19 => 0.002000,
+            26 => 0.001000,
+        ),
+    ),
+    ncat_brain=Material(
+        "NCAT Brain",
+        0.55,  # Approximate Z/A ratio
+        73.9eV,  # Approximate I value
+        1.04g / cm^3,
+        Dict(
+            1 => 0.107000,
+            6 => 0.145000,
+            7 => 0.022000,
+            8 => 0.712000,
+            11 => 0.002000,
+            15 => 0.004000,
+            16 => 0.002000,
+            17 => 0.003000,
+            19 => 0.003000,
+        ),
+    ),
+    ncat_breast_mammary=Material(
+        "NCAT Breast Mammary",
+        0.55,  # Approximate Z/A ratio
+        70.3eV,  # Approximate I value
+        1.02g / cm^3,
+        Dict(
+            1 => 0.106000,
+            6 => 0.332000,
+            7 => 0.030000,
+            8 => 0.527000,
+            11 => 0.001000,
+            15 => 0.001000,
+            16 => 0.002000,
+            17 => 0.001000,
+        ),
+    ),
+    ncat_cartilage=Material(
+        "NCAT Cartilage",
+        0.55,  # Approximate Z/A ratio
+        78.0eV,  # Approximate I value
+        1.10g / cm^3,
+        Dict(
+            1 => 0.096000,
+            6 => 0.099000,
+            7 => 0.022000,
+            8 => 0.744000,
+            11 => 0.005000,
+            15 => 0.022000,
+            16 => 0.009000,
+            17 => 0.003000,
+        ),
+    ),
+    ncat_dry_rib=Material(
+        "NCAT Dry Rib",
+        0.51,  # Approximate Z/A ratio
+        112.0eV,  # Approximate I value
+        1.92g / cm^3,
+        Dict(
+            1 => 0.034000,
+            6 => 0.155000,
+            7 => 0.042000,
+            8 => 0.435000,
+            11 => 0.001000,
+            15 => 0.002000,
+            16 => 0.103000,
+            17 => 0.003000,
+            20 => 0.225000,
+        ),
+    ),
+    ncat_dry_spine=Material(
+        "NCAT Dry Spine",
+        0.52,  # Approximate Z/A ratio
+        110.0eV,  # Approximate I value
+        1.42g / cm^3,
+        Dict(
+            1 => 0.063063,
+            6 => 0.261261,
+            7 => 0.039039,
+            8 => 0.436436,
+            11 => 0.001001,
+            15 => 0.001001,
+            16 => 0.061061,
+            17 => 0.003003,
+            19 => 0.001001,
+            20 => 0.133133,
+        ),
+    ),
+    ncat_eye_lens=Material(
+        "NCAT Eye Lens",
+        0.55,  # Approximate Z/A ratio
+        74.3eV,  # Approximate I value
+        1.07g / cm^3,
+        Dict(
+            1 => 0.096000,
+            6 => 0.195000,
+            7 => 0.057000,
+            8 => 0.646000,
+            11 => 0.001000,
+            15 => 0.001000,
+            16 => 0.003000,
+            17 => 0.001000,
+        ),
+    ),
+    ncat_graphite=Material(
+        "NCAT Graphite",
+        0.50,  # Approximate Z/A ratio
+        78.0eV,  # Approximate I value
+        1.82g / cm^3,
+        Dict(
+            6 => 1.000000,
+        ),
+    ),
+    ncat_heart=Material(
+        "NCAT Heart",
+        0.55,  # Approximate Z/A ratio
+        75.0eV,  # Approximate I value
+        1.05g / cm^3,
+        Dict(
+            1 => 0.104000,
+            6 => 0.139000,
+            7 => 0.029000,
+            8 => 0.718000,
+            11 => 0.001000,
+            15 => 0.002000,
+            16 => 0.002000,
+            17 => 0.002000,
+            19 => 0.003000,
+        ),
+    ),
+    ncat_intestine=Material(
+        "NCAT Intestine",
+        0.55,  # Approximate Z/A ratio
+        75.0eV,  # Approximate I value
+        1.03g / cm^3,
+        Dict(
+            1 => 0.106000,
+            6 => 0.115000,
+            7 => 0.022000,
+            8 => 0.751000,
+            11 => 0.001000,
+            15 => 0.001000,
+            16 => 0.001000,
+            17 => 0.002000,
+            19 => 0.001000,
+        ),
+    ),
+    ncat_iodine=Material(
+        "NCAT Iodine",
+        0.42,  # Approximate Z/A ratio
+        491.0eV,  # Approximate I value
+        4.933g / cm^3,
+        Dict(
+            53 => 1.000000,
+        ),
+    ),
+    ncat_iodine_blood=Material(
+        "NCAT Blood with 0.8% Iodine",
+        0.54,  # Approximate Z/A ratio
+        75.5eV,  # Approximate I value
+        1.09096g / cm^3,
+        Dict(
+            1 => 0.101184,
+            6 => 0.109120,
+            7 => 0.032736,
+            8 => 0.739040,
+            11 => 0.000992,
+            15 => 0.000992,
+            16 => 0.001984,
+            17 => 0.002976,
+            19 => 0.001984,
+            26 => 0.000992,
+            53 => 0.008000,
+        ),
+    ),
+    ncat_iron=Material(
+        "NCAT Iron",
+        0.47,  # Approximate Z/A ratio
+        286.0eV,  # Approximate I value
+        7.86g / cm^3,
+        Dict(
+            26 => 1.000000,
+        ),
+    ),
+    ncat_kidney=Material(
+        "NCAT Kidney",
+        0.55,  # Approximate Z/A ratio
+        75.0eV,  # Approximate I value
+        1.05g / cm^3,
+        Dict(
+            1 => 0.103000,
+            6 => 0.132000,
+            7 => 0.030000,
+            8 => 0.724000,
+            11 => 0.002000,
+            15 => 0.002000,
+            16 => 0.002000,
+            17 => 0.002000,
+            19 => 0.002000,
+            20 => 0.001000,
+        ),
+    ),
+    ncat_lead=Material(
+        "NCAT Lead",
+        0.40,  # Approximate Z/A ratio
+        823.0eV,  # Approximate I value
+        11.34g / cm^3,
+        Dict(
+            82 => 1.000000,
+        ),
+    ),
+    ncat_liver=Material(
+        "NCAT Liver",
+        0.55,  # Approximate Z/A ratio
+        75.0eV,  # Approximate I value
+        1.06g / cm^3,
+        Dict(
+            1 => 0.102000,
+            6 => 0.139000,
+            7 => 0.030000,
+            8 => 0.716000,
+            11 => 0.002000,
+            15 => 0.003000,
+            16 => 0.003000,
+            17 => 0.002000,
+            19 => 0.003000,
+        ),
+    ),
+    ncat_lung=Material(
+        "NCAT Lung",
+        0.55,  # Approximate Z/A ratio
+        75.2eV,  # Approximate I value
+        0.26g / cm^3,
+        Dict(
+            1 => 0.103000,
+            6 => 0.105000,
+            7 => 0.031000,
+            8 => 0.749000,
+            11 => 0.002000,
+            15 => 0.002000,
+            16 => 0.003000,
+            17 => 0.003000,
+            19 => 0.002000,
+        ),
+    ),
+    ncat_lymph=Material(
+        "NCAT Lymph",
+        0.55,  # Approximate Z/A ratio
+        75.0eV,  # Approximate I value
+        1.03g / cm^3,
+        Dict(
+            1 => 0.108000,
+            6 => 0.041000,
+            7 => 0.011000,
+            8 => 0.832000,
+            11 => 0.003000,
+            16 => 0.001000,
+            17 => 0.004000,
+        ),
+    ),
+    ncat_muscle=Material(
+        "NCAT Muscle",
+        0.55,  # Approximate Z/A ratio
+        74.6eV,  # Approximate I value
+        1.05g / cm^3,
+        Dict(
+            1 => 0.102000,
+            6 => 0.143000,
+            7 => 0.034000,
+            8 => 0.710000,
+            11 => 0.001000,
+            15 => 0.002000,
+            16 => 0.003000,
+            17 => 0.001000,
+            19 => 0.004000,
+        ),
+    ),
+    ncat_ovary=Material(
+        "NCAT Ovary",
+        0.55,  # Approximate Z/A ratio
+        75.0eV,  # Approximate I value
+        1.05g / cm^3,
+        Dict(
+            1 => 0.105000,
+            6 => 0.093000,
+            7 => 0.024000,
+            8 => 0.768000,
+            11 => 0.002000,
+            15 => 0.002000,
+            16 => 0.002000,
+            17 => 0.002000,
+            19 => 0.002000,
+        ),
+    ),
+    ncat_pancreas=Material(
+        "NCAT Pancreas",
+        0.55,  # Approximate Z/A ratio
+        75.0eV,  # Approximate I value
+        1.04g / cm^3,
+        Dict(
+            1 => 0.106000,
+            6 => 0.169000,
+            7 => 0.022000,
+            8 => 0.694000,
+            11 => 0.002000,
+            15 => 0.002000,
+            16 => 0.001000,
+            17 => 0.002000,
+            19 => 0.002000,
+        ),
+    ),
+    ncat_pmma=Material(
+        "NCAT PMMA",
+        0.54,  # Approximate Z/A ratio
+        74.0eV,  # Approximate I value
+        1.19g / cm^3,
+        Dict(
+            1 => 0.080000,
+            6 => 0.600000,
+            8 => 0.320000,
+        ),
+    ),
+    ncat_red_marrow=Material(
+        "NCAT Red Marrow",
+        0.55,  # Approximate Z/A ratio
+        75.0eV,  # Approximate I value
+        1.03g / cm^3,
+        Dict(
+            1 => 0.105000,
+            6 => 0.414000,
+            7 => 0.034000,
+            8 => 0.439000,
+            15 => 0.001000,
+            16 => 0.002000,
+            17 => 0.002000,
+            19 => 0.002000,
+            26 => 0.001000,
+        ),
+    ),
+    ncat_skin=Material(
+        "NCAT Skin",
+        0.55,  # Approximate Z/A ratio
+        74.3eV,  # Approximate I value
+        1.09g / cm^3,
+        Dict(
+            1 => 0.100000,
+            6 => 0.204000,
+            7 => 0.042000,
+            8 => 0.645000,
+            15 => 0.002000,
+            16 => 0.001000,
+            17 => 0.002000,
+            19 => 0.003000,
+            26 => 0.001000,
+        ),
+    ),
+    ncat_skull=Material(
+        "NCAT Skull",
+        0.52,  # Approximate Z/A ratio
+        106.0eV,  # Approximate I value
+        1.61g / cm^3,
+        Dict(
+            1 => 0.054348,
+            6 => 0.230435,
+            7 => 0.043478,
+            8 => 0.472826,
+            11 => 0.001087,
+            12 => 0.002174,
+            15 => 0.001087,
+            16 => 0.003261,
+            20 => 0.191304,
+        ),
+    ),
+    ncat_spleen=Material(
+        "NCAT Spleen",
+        0.55,  # Approximate Z/A ratio
+        75.0eV,  # Approximate I value
+        1.06g / cm^3,
+        Dict(
+            1 => 0.103000,
+            6 => 0.113000,
+            7 => 0.032000,
+            8 => 0.741000,
+            11 => 0.001000,
+            15 => 0.003000,
+            16 => 0.002000,
+            17 => 0.002000,
+            19 => 0.003000,
+        ),
+    ),
+    ncat_testis=Material(
+        "NCAT Testis",
+        0.55,  # Approximate Z/A ratio
+        74.7eV,  # Approximate I value
+        1.04g / cm^3,
+        Dict(
+            1 => 0.106000,
+            6 => 0.099000,
+            7 => 0.020000,
+            8 => 0.766000,
+            11 => 0.002000,
+            15 => 0.001000,
+            16 => 0.002000,
+            17 => 0.002000,
+            19 => 0.002000,
+        ),
+    ),
+    ncat_thyroid=Material(
+        "NCAT Thyroid",
+        0.55,  # Approximate Z/A ratio
+        75.0eV,  # Approximate I value
+        1.05g / cm^3,
+        Dict(
+            1 => 0.104000,
+            6 => 0.119000,
+            7 => 0.024000,
+            8 => 0.745000,
+            11 => 0.002000,
+            15 => 0.001000,
+            16 => 0.001000,
+            17 => 0.002000,
+            19 => 0.001000,
+            53 => 0.001000,
+        ),
+    ),
+    ncat_titanium=Material(
+        "NCAT Titanium",
+        0.46,  # Approximate Z/A ratio
+        233.0eV,  # Approximate I value
+        4.53g / cm^3,
+        Dict(
+            22 => 1.000000,
+        ),
+    ),
+    ncat_water=Material(
+        "NCAT Water",
+        0.56,  # Approximate Z/A ratio
+        75.0eV,  # Approximate I value
+        1.0g / cm^3,
+        Dict(
+            1 => 0.112000,
+            8 => 0.888000,
+        ),
+    ),
+    ncat_yellow_marrow=Material(
+        "NCAT Yellow Marrow",
+        0.55,  # Approximate Z/A ratio
+        72.0eV,  # Approximate I value
+        0.98g / cm^3,
+        Dict(
+            1 => 0.115000,
+            6 => 0.644000,
+            7 => 0.007000,
+            8 => 0.231000,
+            11 => 0.001000,
+            16 => 0.001000,
+            17 => 0.001000,
+        ),
+    ),
+
+    # Blood with various iodine concentrations
+    ncat_blood_with_0_7pct_iodine=Material(
+        "NCAT Blood with 0.7% Iodine",
+        0.54,  # Approximate Z/A ratio
+        75.5eV,  # Approximate I value
+        1.067472g / cm^3,
+        Dict(
+            1 => 0.101286,
+            6 => 0.109230,
+            7 => 0.032769,
+            8 => 0.739785,
+            11 => 0.000993,
+            15 => 0.000993,
+            16 => 0.001986,
+            17 => 0.002979,
+            19 => 0.001986,
+            26 => 0.000993,
+            53 => 0.007000,
+        ),
+    ),
+    ncat_blood_with_0_9pct_iodine=Material(
+        "NCAT Blood with 0.9% Iodine",
+        0.54,  # Approximate Z/A ratio
+        75.5eV,  # Approximate I value
+        1.069627g / cm^3,
+        Dict(
+            1 => 0.101082,
+            6 => 0.109010,
+            7 => 0.032703,
+            8 => 0.738295,
+            11 => 0.000991,
+            15 => 0.000991,
+            16 => 0.001982,
+            17 => 0.002973,
+            19 => 0.001982,
+            26 => 0.000991,
+            53 => 0.009000,
+        ),
+    ),
+    ncat_blood_with_1_0pct_iodine=Material(
+        "NCAT Blood with 1.0% Iodine",
+        0.54,  # Approximate Z/A ratio
+        75.5eV,  # Approximate I value
+        1.070707g / cm^3,
+        Dict(
+            1 => 0.100980,
+            6 => 0.108900,
+            7 => 0.032670,
+            8 => 0.737550,
+            11 => 0.000990,
+            15 => 0.000990,
+            16 => 0.001980,
+            17 => 0.002970,
+            19 => 0.001980,
+            26 => 0.000990,
+            53 => 0.010000,
+        ),
+    ),
+    ncat_blood_with_1_1pct_iodine=Material(
+        "NCAT Blood with 1.1% Iodine",
+        0.54,  # Approximate Z/A ratio
+        75.5eV,  # Approximate I value
+        1.071789g / cm^3,
+        Dict(
+            1 => 0.100878,
+            6 => 0.108790,
+            7 => 0.032637,
+            8 => 0.736805,
+            11 => 0.000989,
+            15 => 0.000989,
+            16 => 0.001978,
+            17 => 0.002967,
+            19 => 0.001978,
+            26 => 0.000989,
+            53 => 0.011000,
+        ),
+    ),
+    ncat_blood_with_2_0pct_iodine=Material(
+        "NCAT Blood with 2.0% Iodine",
+        0.54,  # Approximate Z/A ratio
+        75.5eV,  # Approximate I value
+        1.081632g / cm^3,
+        Dict(
+            1 => 0.099960,
+            6 => 0.107800,
+            7 => 0.032340,
+            8 => 0.730100,
+            11 => 0.000980,
+            15 => 0.000980,
+            16 => 0.001960,
+            17 => 0.002940,
+            19 => 0.001960,
+            26 => 0.000980,
+            53 => 0.020000,
+        ),
+    ),
+    ncat_blood_with_3_0pct_iodine=Material(
+        "NCAT Blood with 3.0% Iodine",
+        0.53,  # Approximate Z/A ratio
+        76.0eV,  # Approximate I value
+        1.092784g / cm^3,
+        Dict(
+            1 => 0.098940,
+            6 => 0.106700,
+            7 => 0.032010,
+            8 => 0.722650,
+            11 => 0.000970,
+            15 => 0.000970,
+            16 => 0.001940,
+            17 => 0.002910,
+            19 => 0.001940,
+            26 => 0.000970,
+            53 => 0.030000,
+        )
+    ),
+
     # TODO: MMD Specific Materials
 
     omnipaque350=Material(
@@ -669,7 +1312,6 @@ Materials = (
             53 => 0.019
         ),
     ),
-
     # Calcium materials
     ca50=Material(
         "Ca-50 mg/mL",
