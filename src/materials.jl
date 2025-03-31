@@ -1401,6 +1401,43 @@ Materials = (
             7 => 0.007,
             8 => 0.392,
             20 => 0.306  # Note: No Cl in composition
-        ),
+        )
     ),
+
+    # Basis materials
+    basis_water=Material(
+        "Basis Water",
+        0.0,        # not needed for LAC purposes, so set to 0.0
+        0.0eV,      # not needed for LAC purposes, so set to 0.0eV
+        1.0g / cm^3,
+        Dict(1 => 0.1119, 8 => 0.8881)
+    ),
+    basis_lipid=Material(
+        "Basis Lipid",
+        0.0,
+        0.0eV,
+        0.92g / cm^3,
+        Dict(1 => 0.1190, 6 => 0.7720, 8 => 0.1090)
+    ),
+    basis_collagen=Material(
+        "Basis Collagen",
+        0.0,
+        0.0eV,
+        1.26g / cm^3,
+        Dict(1 => 0.0344, 6 => 0.7140, 7 => 0.1827, 8 => 0.0689)
+    ),
+    basis_hydroxyapatite=Material(
+        "Basis Hydroxyapatite",
+        0.0,
+        0.0eV,
+        2.74g / cm^3,
+        Dict(1 => 0.0020, 8 => 0.4140, 15 => 0.1850, 20 => 0.3990)
+    ),
+    basis_air=Material(
+        "Basis Air",
+        0.0,
+        0.0eV,
+        0.001205g / cm^3,
+        Dict(6 => 0.000124, 7 => 0.755268, 8 => 0.231781, 17 => 0.012827)
+    )
 )
