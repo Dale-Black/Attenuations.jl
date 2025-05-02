@@ -1180,7 +1180,7 @@ Materials = (
         (found from https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=442aed6e-6242-4a96-90aa-d988b62d55e8)
         =#
 
-        1.0g / cm^3, # not accurate according to NIH specs ^^, but fits Mendonca better
+        1.406g / cm^3, # not accurate according to NIH specs ^^, but fits Mendonca better
         Dict(
             1 => 0.244596,
             6 => 0.209827,
@@ -1200,7 +1200,7 @@ Materials = (
         (found from https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=442aed6e-6242-4a96-90aa-d988b62d55e8)
         =#
 
-        1.0g / cm^3, # not accurate according to NIH specs ^^, but fits Mendonca better
+        1.349g / cm^3, # not accurate according to NIH specs ^^, but fits Mendonca better
         Dict(
             1 => 0.338349,
             6 => 0.179812,
@@ -1311,6 +1311,48 @@ Materials = (
             20 => 0.018,
             53 => 0.019
         ),
+    ), i30_extrapolated = Material(
+        "I-30 mg/mL (Extrapolated)",
+        0.54709, # Assuming Z/A is constant from source data
+        75.0eV,  # Assuming I-value is constant from source data
+        1.013g / cm^3, # Extrapolated density based on i2-i20 trend
+        Dict(
+            1 => 0.084,   # H
+            6 => 0.681,   # C (Normalized)
+            7 => 0.020,   # N
+            8 => 0.167,   # O
+            17 => 0.001,  # Cl
+            20 => 0.017,  # Ca
+            53 => 0.030   # I
+        )
+    ), i40_extrapolated = Material(
+        "I-40 mg/mL (Extrapolated)",
+        0.54709, # Assuming Z/A is constant from source data
+        75.0eV,  # Assuming I-value is constant from source data
+        1.018g / cm^3, # Extrapolated density based on i2-i20 trend
+        Dict(
+            1 => 0.084,   # H
+            6 => 0.675,   # C
+            7 => 0.020,   # N
+            8 => 0.163,   # O
+            17 => 0.001,  # Cl
+            20 => 0.017,  # Ca
+            53 => 0.040   # I
+        )
+    ), i50_extrapolated = Material(
+        "I-50 mg/mL (Extrapolated)",
+        0.54709, # Assuming Z/A is constant from source data
+        75.0eV,  # Assuming I-value is constant from source data
+        1.022g / cm^3, # Extrapolated density based on i2-i20 trend
+        Dict(
+            1 => 0.083,   # H
+            6 => 0.671,   # C (Adjusted for normalization)
+            7 => 0.019,   # N
+            8 => 0.160,   # O
+            17 => 0.001,  # Cl
+            20 => 0.016,  # Ca
+            53 => 0.050   # I
+        )
     ),
     # Calcium materials
     ca50=Material(
